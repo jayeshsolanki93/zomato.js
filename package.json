@@ -1,12 +1,17 @@
 {
   "name": "zomato.js",
-  "version": "1.0.2",
-  "description": "nodejs library for Zomato",
+  "version": "1.0.3",
+  "description": "zomato.js is a simple promise based JS wrapper for the Zomato API",
   "author": {
     "name": "Jayesh Solanki",
     "email": "jayeshsolanki93@gmail.com",
     "url": "http://jayeshsolanki.com"
   },
+  "keywords": [
+    "zomato",
+    "api",
+    "restaurant"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

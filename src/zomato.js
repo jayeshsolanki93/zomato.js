@@ -150,10 +150,12 @@ class Zomato {
    * @see {@link https://developers.zomato.com/documentation#!/restaurant/restaurant}
    *
    * @param {Object} params Parameters that will be sent
-   * @return {Promise} p Resolves with the daily menu
+   * @return {Promise} p Resolves with the list of daily menus
    */
   dailymenu(params) {
-    return this.get('dailymenu', qs.stringify(params));
+    return this
+            .get('dailymenu', qs.stringify(params))
+            .then(data => data.daily_menus.map((o) => o.daily_menu));
   }
 
   /**
