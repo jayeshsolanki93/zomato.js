@@ -32,6 +32,15 @@ describe('.collections(params)', function() {
             .should.be.rejected
             .should.eventually.have.property('message', 'Failed with status code: 400');
   });
+  it('should returns collections for the given location', function ()  {
+    return zomato.collections({
+      lat: 19.0895595,
+      lon: 72.8634203,
+      count: 5
+    })
+      .should.be.fulfilled
+      .should.eventually.be.an('array');
+  });
 });
 
 describe('.cuisines(params)', function() {
@@ -40,6 +49,14 @@ describe('.cuisines(params)', function() {
             .should.be.rejected
             .should.eventually.have.property('message', 'Failed with status code: 400');
   });
+  it('should return cuisines for the given location', function ()  {
+    return zomato.cuisines({
+      lat: 19.0895595,
+      lon: 72.8634203
+    })
+      .should.be.fulfilled
+      .should.eventually.be.an('array');
+  });
 });
 
 describe('.establishments(params)', function() {
@@ -47,6 +64,14 @@ describe('.establishments(params)', function() {
     return zomato.establishments({})
             .should.be.rejected
             .should.eventually.have.property('message', 'Failed with status code: 400');
+  });
+  it('should return establishments for the given location', function ()  {
+    return zomato.establishments({
+      lat: 19.0895595,
+      lon: 72.8634203
+    })
+      .should.be.fulfilled
+      .should.eventually.be.an('array');
   });
 });
 
@@ -90,9 +115,9 @@ describe('.restaurant(params)', function() {
     return zomato.restaurant({
       res_id: 34383
     })
-    .should.be.fulfilled
-    .should.eventually.be.an('object')
-    .should.eventually.have.a.property('name', 'Leopold Cafe & Bar');
+      .should.be.fulfilled
+      .should.eventually.be.an('object')
+      .should.eventually.have.a.property('name', 'Leopold Cafe & Bar');
   });
 });
 
@@ -101,8 +126,15 @@ describe('.dailymenu(params)', function() {
     return zomato.dailymenu({
       res_id: 34383
     })
-    .should.be.rejected
-    .should.eventually.have.property('message', 'Failed with status code: 400');
+      .should.be.rejected
+      .should.eventually.have.property('message', 'Failed with status code: 400');
+  });
+  it('should return the dailymenu for the given restaurant id', function ()  {
+    return zomato.dailymenu({
+      res_id: 16507902
+    })
+      .should.be.fulfilled
+      .should.eventually.be.an('array');
   });
 });
 
@@ -111,9 +143,9 @@ describe('.reviews(params)', function() {
     return zomato.reviews({
       res_id: 34383
     })
-    .should.be.fulfilled
-    .should.eventually.be.an('array')
-    .should.eventually.have.length(5);
+      .should.be.fulfilled
+      .should.eventually.be.an('array')
+      .should.eventually.have.length(5);
   });
 });
 
@@ -122,7 +154,17 @@ describe('.search(params)', function() {
     return zomato.search({
       q: 'Leopold Cafe & Bar'
     })
-    .should.be.fulfilled
-    .should.eventually.be.an('array');
+      .should.be.fulfilled
+      .should.eventually.be.an('array');
+  });
+});
+
+
+describe('.get()', function () {
+  it('should throw an error when no hostname is provided', function () {
+    zomato.hostname = null;
+    return zomato.get()
+            .should.be.rejected
+            .should.eventually.have.property('code', 'ECONNREFUSED');
   });
 });

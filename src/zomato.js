@@ -1,13 +1,11 @@
 import qs from 'querystring';
 import https from './utils/https';
 
-const hostname = 'developers.zomato.com';
-const apiVersion = '/api/v2.1';
-
 /**
  * Wrap the Zomato API
  */
 class Zomato {
+
   /**
    * constructor - Constructs the api object
    *
@@ -15,6 +13,8 @@ class Zomato {
    */
   constructor(apiKey) {
     this.apiKey = apiKey;
+    this.hostname = 'developers.zomato.com';
+    this.apiVersion = '/api/v2.1';
   }
 
   /**
@@ -25,14 +25,14 @@ class Zomato {
    * @return {Promise} p Resolves with the https response
    */
   get(endpoint, querystring) {
-    let path = `${apiVersion}/${endpoint}`;
+    let path = `${this.apiVersion}/${endpoint}`;
     if (querystring !== undefined) {
       path += `?${querystring}`;
     }
     const headers = {
       'user-key': this.apiKey
     };
-    return https.get(hostname, path, headers);
+    return https.get(this.hostname, path, headers);
   }
 
   /**
