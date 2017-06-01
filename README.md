@@ -29,7 +29,6 @@ z
 
 ## API Reference
 
----
 ### categories
 Get lists of categories
 ##### Parameters
@@ -68,17 +67,17 @@ zomato
 ### cities
 Get city details
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `q` | String | Query by city name | No |
-| `lat` | Number | Latitude | No |
-| `lon` | Number | Longitude | No |
-| `city_ids` | String | Comma separated `city_id` values | No |
-| `count` | Number | The number of max results to display | No |
+| Name       | Type   | Description                          | Required |
+| :--------: | :----: | :----------------------------------: | :------: |
+| `q`        | String | Query by city name                   | No       |
+| `lat`      | Number | Latitude                             | No       |
+| `lon`      | Number | Longitude                            | No       |
+| `city_ids` | String | Comma separated `city_id` values     | No       |
+| `count`    | Number | The number of max results to display | No       |
 
 ##### Returns
 `Promise`
@@ -123,16 +122,16 @@ zomato
 ### collections
 Get zomato collections in a city
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `city_id` | Number | The id of the city | No |
-| `lat` | Number | Latitude | No |
-| `lon` | Number | Longitude | No |
-| `count` | Number | The number of max results to display | No |
+| Name      | Type   | Description                          | Required |
+| :--------:| :----: | :----------------------------------: | :-------:|
+| `city_id` | Number | The id of the city                   | No       |
+| `lat`     | Number | Latitude                             | No       |
+| `lon`     | Number | Longitude                            | No       |
+| `count`   | Number | The number of max results to display | No       |
 
 ##### Returns
 `Promise`
@@ -193,15 +192,15 @@ zomato
 ### cuisines
 Get list of all cuisines in a city
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :--------:| :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `city_id` | Number | id of the city for which the cuisines are needed | No |
-| `lat` | Number | Latitude | No |
-| `lon` | Number | Longitude | No |
+| Name      | Type   | Description                                      | Required |
+| :-------: | :----: | :----------------------------------------------: | :------: |
+| `city_id` | Number | id of the city for which the cuisines are needed | No       |
+| `lat`     | Number | Latitude                                         | No       |
+| `lon`     | Number | Longitude                                        | No       |
 
 ##### Returns
 `Promise`
@@ -254,15 +253,15 @@ zomato
 ### establishments
 Get list of restaurant types in a city
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `city_id` | Number | The id of the city | No |
-| `lat` | Number | Latitude | No |
-| `lon` | Number | Longitude | No |
+| Name      | Type   | Description        | Required |
+| :-------: | :----: | :----------------: | :------: |
+| `city_id` | Number | The id of the city | No       |
+| `lat`     | Number | Latitude           | No       |
+| `lon`     | Number | Longitude          | No       |
 
 ##### Returns
 `Promise`
@@ -305,14 +304,14 @@ zomato
 ### geocode
 Get location details based on coordinates
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `lat` | Number | Latitude | Yes |
-| `lon` | Number | Longitude | Yes |
+| Name  | Type   | Description | Required |
+| :---: | :----: | :---------: | :------: |
+| `lat` | Number | Latitude    | Yes      |
+| `lon` | Number | Longitude   | Yes      |
 
 ##### Returns
 `Promise`
@@ -381,16 +380,16 @@ zomato
 ### locations
 Search for locations
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `query` | String | Suggestion for location name | Yes |
-| `lat` | Number | Latitude | No |
-| `lon` | Number | Longitude | No |
-| `count` | Number | Max number of requests to fetch | No |
+| Name    | Type   | Description                     | Required |
+| :-----: | :----: | :-----------------------------: | :------: |
+| `query` | String | Suggestion for location name    | Yes      |
+| `lat`   | Number | Latitude                        | No       |
+| `lon`   | Number | Longitude                       | No       |
+| `count` | Number | Max number of requests to fetch | No       |
 
 ##### Returns
 `Promise`
@@ -442,14 +441,14 @@ zomato
 ### locationDetails
 Get Zomato location details
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `entity_id` | Number | Location id obtained from locations api | Yes |
-| `entity_type` | String | Location type obtained from locations api | Yes |
+| Name          | Type   | Description                               | Required |
+| :-----------: | :----: | :---------------------------------------: | :------: |
+| `entity_id`   | Number | Location id obtained from locations api   | Yes      |
+| `entity_type` | String | Location type obtained from locations api | Yes      |
 
 ##### Returns
 `Promise`
@@ -519,13 +518,13 @@ zomato
 ### restaurant
 Get restaurant details
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `res_id` | Number | Id of restaurant whose details are required | Yes |
+| Name     | Type   | Description                                 | Required |
+| :------: | :----: | :-----------------------------------------: | :------: |
+| `res_id` | Number | Id of restaurant whose details are required | Yes      |
 
 ##### Returns
 `Promise`
@@ -582,13 +581,13 @@ zomato
 ### dailymenu
 Get daily menu of a restaurant
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `res_id` | Number | Id of restaurant whose details are required | Yes |
+| Name     | Type   | Description                                 | Required |
+| :------: | :----: | :-----------------------------------------: | :------: |
+| `res_id` | Number | Id of restaurant whose details are required | Yes      |
 
 ##### Returns
 `Promise`
@@ -616,15 +615,15 @@ zomato
 ### reviews
 Get restaurant reviews
 ##### Parameters
-| Name | Type | Description
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `res_id` | Number | Id of restaurant whose details are required | Yes |
-| `start` | Number | Fetch results after this offset | Yes |
-| `count` | Number | Max number of results to retrieve | Yes |
+| Name     | Type   | Description                                 | Required |
+| :------: | :----: | :-----------------------------------------: | :------: |
+| `res_id` | Number | Id of restaurant whose details are required | Yes      |
+| `start`  | Number | Fetch results after this offset             | Yes      |
+| `count`  | Number | Max number of results to retrieve           | Yes      |
 
 ##### Returns
 `Promise`
@@ -733,26 +732,26 @@ zomato
 ### search
 Search for restaurants
 ##### Parameters
-| Name | Type | Description |
-| ---- | ---- | -------- | ----------- |
+| Name      | Type   | Description                             |
+| :-------: | :----: | :-------------------------------------: |
 | `options` | Object | `options` containing the params to send |
 ##### Options
-| Name | Type | Description | Required |
-| ---- | ---- | -------- | ----------- | ---- |
-| `entity_id` | Number | The location id | No |
-| `entity_type` | Number | The location type (`city`, `subzone`, `zone`, `landmark`, `metro`, `group`) | No |
-| `q` | Number | Search keyword | No |
-| `start` | Number | Fetch results after this offset | No |
-| `count` | Number | Max number of results to retrieve | No |
-| `lat` | Number | Latitude | No |
-| `lon` | Number | Longitude | No |
-| `radius` | Number | The radius around (`lat`,`lon`); to define search area, defined in meters(M) | No |
-| `cuisines` | String | The list of cuisine id's separated by comma | No |
-| `establishment_type` | String | The establishment id obtained from establishments call | No |
-| `collection_id` | Number | The collection id obtained from collections call | No |
-| `category` | String | The category ids obtained from categories call | No |
-| `sort` | String | sort restaurants by `cost`, `rating`, `real_distance` | No |
-| `order` | String | Used with 'sort' parameter to define ascending(`asc`) / descending(`desc`) | No |
+| Name                 | Type   | Description                                                                  | Required |
+| :------------------: | :----: | :--------------------------------------------------------------------------: | :------: |
+| `entity_id`          | Number | The location id                                                              | No       |
+| `entity_type`        | Number | The location type (`city`, `subzone`, `zone`, `landmark`, `metro`, `group`)  | No       |
+| `q`                  | Number | Search keyword                                                               | No       |
+| `start`              | Number | Fetch results after this offset                                              | No       |
+| `count`              | Number | Max number of results to retrieve                                            | No       |
+| `lat`                | Number | Latitude                                                                     | No       |
+| `lon`                | Number | Longitude                                                                    | No       |
+| `radius`             | Number | The radius around (`lat`,`lon`); to define search area, defined in meters(M) | No       |
+| `cuisines`           | String | The list of cuisine id's separated by comma                                  | No       |
+| `establishment_type` | String | The establishment id obtained from establishments call                       | No       |
+| `collection_id`      | Number | The collection id obtained from collections call                             | No       |
+| `category`           | String | The category ids obtained from categories call                               | No       |
+| `sort`               | String | sort restaurants by `cost`, `rating`, `real_distance`                        | No       |
+| `order`              | String | Used with 'sort' parameter to define ascending(`asc`) / descending(`desc`)   | No       |
 ##### Returns
 `Promise`
 ##### Example
