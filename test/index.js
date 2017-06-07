@@ -13,7 +13,7 @@ describe('.categories()', function() {
     return zomato.categories({})
             .should.be.fulfilled
             .should.eventually.be.an('array')
-            .should.eventually.have.length.of.at.least(14);
+            .should.eventually.have.length.of.at.least(13);
   });
 });
 
