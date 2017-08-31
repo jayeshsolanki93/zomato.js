@@ -144,8 +144,8 @@ describe('.reviews(params)', function() {
       res_id: 34383
     })
       .should.be.fulfilled
-      .should.eventually.be.an('array')
-      .should.eventually.have.length(5);
+      .should.eventually.be.an('object')
+      .should.eventually.have.property('user_reviews');
   });
 });
 
@@ -155,7 +155,8 @@ describe('.search(params)', function() {
       q: 'Leopold Cafe & Bar'
     })
       .should.be.fulfilled
-      .should.eventually.be.an('array');
+      .should.eventually.be.an('object')
+      .should.eventually.have.property('restaurants');
   });
 });
 

@@ -168,7 +168,11 @@ class Zomato {
   reviews(params) {
     return this
             .get('reviews', qs.stringify(params))
-            .then(data => data.user_reviews.map((o) => o.review));
+            .then(data => {
+              let reviews = data.user_reviews.map((o) => o.review);
+              data.user_reviews = reviews;
+              return data;
+            });
   }
 
   /**
@@ -181,7 +185,11 @@ class Zomato {
   search(params) {
     return this
             .get('search', qs.stringify(params))
-            .then(data => data.restaurants.map((o) => o.restaurant));
+            .then(data => {
+              let restaurants = data.restaurants.map((o) => o.restaurant);
+              data.restaurants = restaurants;
+              return data;
+            });
   }
 
 }
